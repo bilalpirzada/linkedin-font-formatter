@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Multiple Unicode Styles Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Convert Text to Multiple Unicode Styles</h2>
+    
+    <label for="normalInput">Enter Normal Text:</label>
+    <input type="text" id="normalInput" placeholder="Enter text here">
+    
+    <label for="boldOutput">Bold Output (Unicode):</label>
+    <textarea id="boldOutput" rows="4" readonly placeholder="Bold text will appear here"></textarea>
+
+    <label for="italicOutput">Italic Output (Unicode):</label>
+    <textarea id="italicOutput" rows="4" readonly placeholder="Italic text will appear here"></textarea>
+
+    <label for="boldItalicOutput">Italic Bold Output (Unicode):</label>
+    <textarea id="boldItalicOutput" rows="4" readonly placeholder="Italic bold text will appear here"></textarea>
+
+    <!-- Additional Styles -->
+    <label for="boldScriptOutput">Bold Script Output (Unicode):</label>
+    <textarea id="boldScriptOutput" rows="4" readonly placeholder="Bold script text will appear here"></textarea>
+
+    <label for="italicScriptOutput">Italic Script Output (Unicode):</label>
+    <textarea id="italicScriptOutput" rows="4" readonly placeholder="Italic script text will appear here"></textarea>
+
+    <label for="boldFrakturOutput">Bold Fraktur Output (Unicode):</label>
+    <textarea id="boldFrakturOutput" rows="4" readonly placeholder="Bold Fraktur text will appear here"></textarea>
+
+    <label for="italicFrakturOutput">Italic Fraktur Output (Unicode):</label>
+    <textarea id="italicFrakturOutput" rows="4" readonly placeholder="Italic Fraktur text will appear here"></textarea>
+
+    <label for="boldSansOutput">Bold Sans-Serif Output (Unicode):</label>
+    <textarea id="boldSansOutput" rows="4" readonly placeholder="Bold Sans-Serif text will appear here"></textarea>
+
+    <script>
+        // Function to convert normal text to bold Unicode
+        function convertToBold(inputText) {
+            const boldChars = {
+                'a': '𝗮', 'b': '𝗯', 'c': '𝗰', 'd': '𝗱', 'e': '𝗲', 'f': '𝗳', 'g': '𝗴', 'h': '𝗵',
+                'i': '𝗶', 'j': '𝗷', 'k': '𝗸', 'l': '𝗹', 'm': '𝗺', 'n': '𝗻', 'o': '𝗼', 'p': '𝗽',
+                'q': '𝗾', 'r': '𝗿', 's': '𝘀', 't': '𝘁', 'u': '𝘂', 'v': '𝘃', 'w': '𝘄', 'x': '𝘅',
+                'y': '𝘆', 'z': '𝘇',
+                'A': '𝗔', 'B': '𝗕', 'C': '𝗖', 'D': '𝗗', 'E': '𝗘', 'F': '𝗙', 'G': '𝗚', 'H': '𝗛',
+                'I': '𝗜', 'J': '𝗝', 'K': '𝗞', 'L': '𝗟', 'M': '𝗠', 'N': '𝗡', 'O': '𝗢', 'P': '𝗣',
+                'Q': '𝗤', 'R': '𝗥', 'S': '𝗦', 'T': '𝗧', 'U': '𝗨', 'V': '𝗩', 'W': '𝗪', 'X': '𝗫',
+                'Y': '𝗬', 'Z': '𝗭',
+                '0': '𝟎', '1': '𝟏', '2': '𝟐', '3': '𝟑', '4': '𝟒', '5': '𝟓', '6': '𝟖', '7': '𝟕',
+                '8': '𝟖', '9': '𝟗'
+            };
+            return inputText.split('').map(char => boldChars[char] || char).join('');
+        }
+
+        // Function to convert normal text to italic Unicode
+        function convertToItalic(inputText) {
+            const italicChars = {
+                'a': '𝑎', 'b': '𝑏', 'c': '𝑐', 'd': '𝑑', 'e': '𝑒', 'f': '𝑓', 'g': '𝑔', 'h': 'ℎ',
+                'i': '𝑖', 'j': '𝑗', 'k': '𝑘', 'l': '𝑙', 'm': '𝑚', 'n': '𝑛', 'o': '𝑜', 'p': '𝑝',
+                'q': '𝑞', 'r': '𝑟', 's': '𝑠', 't': '𝑡', 'u': '𝑢', 'v': '𝑣', 'w': '𝑤', 'x': '𝑥',
+                'y': '𝑦', 'z': '𝑧',
+                'A': '𝑎', 'B': '𝑏', 'C': '𝑐', 'D': '𝑑', 'E': '𝑒', 'F': '𝑓', 'G': '𝑔', 'H': 'ℎ',
+                'I': '𝑖', 'J': '𝑗', 'K': '𝑘', 'L': '𝑙', 'M': '𝑚', 'N': '𝑛', 'O': '𝑜', 'P': '𝑝',
+                'Q': '𝑞', 'R': '𝑟', 'S': '𝑠', 'T': '𝑡', 'U': '𝑢', 'V': '𝑣', 'W': '𝑤', 'X': '𝑥',
+                'Y': '𝑦', 'Z': '𝑧',
+                '0': '𝟎', '1': '𝟏', '2': '𝟐', '3': '𝟑', '4': '𝟒', '5': '𝟓', '6': '𝟖', '7': '𝟕',
+                '8': '𝟖', '9': '𝟙'
+            };
+            return inputText.split('').map(char => italicChars[char] || char).join('');
+        }
+
+        // Function to convert normal text to italic bold Unicode (the style you've shown)
+        function convertToBoldItalic(inputText) {
+            const boldItalicChars = {
+                'a': '𝑎', 'b': '𝑏', 'c': '𝑐', 'd': '𝑑', 'e': '𝑒', 'f': '𝑓', 'g': '𝑔', 'h': '𝒽',
+                'i': '𝑖', 'j': '𝑗', 'k': '𝑘', 'l': '𝑙', 'm': '𝑚', 'n': '𝑛', 'o': '𝑜', 'p': '𝑝',
+                'q': '𝑞', 'r': '𝑟', 's': '𝑠', 't': '𝑡', 'u': '𝑢', 'v': '𝑣', 'w': '𝑤', 'x': '𝑥',
+                'y': '𝑦', 'z': '𝑧',
+                'A': '𝑎', 'B': '𝑏', 'C': '𝑐', 'D': '𝑑', 'E': '𝑒', 'F': '𝑓', 'G': '𝑔', 'H': '𝒽',
+                'I': '𝑖', 'J': '𝑗', 'K': '𝑘', 'L': '𝑙', 'M': '𝑚', 'N': '𝑛', 'O': '𝑜', 'P': '𝑝',
+                'Q': '𝑞', 'R': '𝑟', 'S': '𝑠', 'T': '𝑡', 'U': '𝑢', 'V': '𝑣', 'W': '𝑤', 'X': '𝑥',
+                'Y': '𝑦', 'Z': '𝑧',
+                '0': '𝟘', '1': '𝟙', '2': '𝟚', '3': '𝟛', '4': '𝟜', '5': '𝟝', '6': '𝟞', '7': '𝟟',
+                '8': '𝟠', '9': '𝟡'
+            };
+            return inputText.split('').map(char => boldItalicChars[char] || char).join('');
+        }
+
+        // Function to convert normal text to bold script Unicode
+        function convertToBoldScript(inputText) {
+            const boldScriptChars = {
+                'a': '𝒶', 'b': '𝒷', 'c': '𝒸', 'd': '𝒹', 'e': 'ℯ', 'f': '𝒻', 'g': '𝒼', 'h': '𝒽',
+                'i': '𝒾', 'j': '𝒿', 'k': '𝓀', 'l': '𝓁', 'm': '𝓂', 'n': '𝓃', 'o': 'ℴ', 'p': '𝓅',
+                'q': '𝓆', 'r': '𝓇', 's': '𝓈', 't': '𝓉', 'u': '𝓊', 'v': '𝓋', 'w': '𝓌', 'x': '𝓍',
+                'y': '𝓎', 'z': '𝓏',
+                'A': '𝒜', 'B': '𝒝', 'C': '𝒞', 'D': '𝒟', 'E': 'ℰ', 'F': '𝒻', 'G': '𝒢', 'H': '𝒲',
+                'I': '𝒾', 'J': '𝒥', 'K': '𝒦', 'L': 'ℒ', 'M': '𝒲', 'N': '𝒩', 'O': '𝒪', 'P': '𝒫',
+                'Q': '𝒬', 'R': 'ℜ', 'S': '𝒮', 'T': '𝒯', 'U': '𝒰', 'V': '𝒱', 'W': '𝒲', 'X': '𝒳',
+                'Y': '𝒴', 'Z': '𝒵'
+            };
+
+            return inputText.split('').map(char => boldScriptChars[char] || char).join('');
+        }
+
+        // Function to convert normal text to italic script Unicode
+        function convertToItalicScript(inputText) {
+            const italicScriptChars = {
+                'a': '𝒶', 'b': '𝒷', 'c': '𝒸', 'd': '𝒹', 'e': 'ℯ', 'f': '𝒻', 'g': '𝒼', 'h': '𝒽',
+                'i': '𝒾', 'j': '𝒿', 'k': '𝓀', 'l': '𝓁', 'm': '𝓂', 'n': '𝓃', 'o': 'ℴ', 'p': '𝓅',
+                'q': '𝓆', 'r': '𝓇', 's': '𝓈', 't': '𝓉', 'u': '𝓊', 'v': '𝓋', 'w': '𝓌', 'x': '𝓍',
+                'y': '𝓎', 'z': '𝓏',
+                'A': '𝒜', 'B': '𝒝', 'C': '𝒞', 'D': '𝒟', 'E': 'ℰ', 'F': '𝒻', 'G': '𝒢', 'H': '𝒲',
+                'I': '𝒾', 'J': '𝒥', 'K': '𝒦', 'L': 'ℒ', 'M': '𝒲', 'N': '𝒩', 'O': '𝒪', 'P': '𝒫',
+                'Q': '𝒬', 'R': 'ℜ', 'S': '𝒮', 'T': '𝒯', 'U': '𝒰', 'V': '𝒱', 'W': '𝒲', 'X': '𝒳',
+                'Y': '𝒴', 'Z': '𝒵'
+            };
+
+            return inputText.split('').map(char => italicScriptChars[char] || char).join('');
+        }
+
+        // Function to convert normal text to bold fraktur Unicode
+        function convertToBoldFraktur(inputText) {
+            const boldFrakturChars = {
+                'a': '𝔞', 'b': '𝔟', 'c': '𝔠', 'd': '𝔡', 'e': '𝔢', 'f': '𝔣', 'g': '𝔤', 'h': '𝔥',
+                'i': '𝔦', 'j': '𝔧', 'k': '𝔨', 'l': '𝔩', 'm': '𝔪', 'n': '𝔫', 'o': '𝔬', 'p': '𝔭',
+                'q': '𝔮', 'r': '𝔯', 's': '𝔰', 't': '𝔱', 'u': '𝔲', 'v': '𝔳', 'w': '𝔴', 'x': '𝔵',
+                'y': '𝔶', 'z': '𝔷',
+                'A': '𝔄', 'B': '𝔅', 'C': 'ℭ', 'D': '𝔇', 'E': '𝔈', 'F': '𝔉', 'G': '𝔊', 'H': 'ℌ',
+                'I': '𝔍', 'J': '𝔎', 'K': '𝔏', 'L': '𝔐', 'M': '𝔑', 'N': '𝔒', 'O': '𝔓', 'P': '𝔔',
+                'Q': 'ℚ', 'R': 'ℜ', 'S': '𝔖', 'T': '𝔗', 'U': '𝔘', 'V': '𝔙', 'W': '𝔚', 'X': '𝔛',
+                'Y': '𝔜', 'Z': 'ℨ'
+            };
+
+            return inputText.split('').map(char => boldFrakturChars[char] || char).join('');
+        }
+
+        // Function to convert normal text to italic fraktur Unicode
+        function convertToItalicFraktur(inputText) {
+            const italicFrakturChars = {
+                'a': '𝖆', 'b': '𝖇', 'c': '𝖈', 'd': '𝖉', 'e': '𝖊', 'f': '𝖋', 'g': '𝖌', 'h': '𝖍',
+                'i': '𝖎', 'j': '𝖏', 'k': '𝖐', 'l': '𝖑', 'm': '𝖒', 'n': '𝖓', 'o': '𝖔', 'p': '𝖕',
+                'q': '𝖖', 'r': '𝖗', 's': '𝖘', 't': '𝖙', 'u': '𝖚', 'v': '𝖛', 'w': '𝖜', 'x': '𝖝',
+                'y': '𝖞', 'z': '𝖟',
+                'A': '𝖠', 'B': '𝖡', 'C': '𝖢', 'D': '𝖣', 'E': '𝖤', 'F': '𝖥', 'G': '𝖦', 'H': '𝖧',
+                'I': '𝖨', 'J': '𝖩', 'K': '𝖪', 'L': '𝖫', 'M': '𝖬', 'N': '𝖭', 'O': '𝖮', 'P': '𝖯',
+                'Q': '𝖰', 'R': '𝖱', 'S': '𝖲', 'T': '𝖳', 'U': '𝖴', 'V': '𝖵', 'W': '𝖶', 'X': '𝖷',
+                'Y': '𝖸', 'Z': '𝖹'
+            };
+
+            return inputText.split('').map(char => italicFrakturChars[char] || char).join('');
+        }
+
+        // Function to convert normal text to bold sans-serif Unicode
+        function convertToBoldSans(inputText) {
+            const boldSansChars = {
+                'a': '𝗮', 'b': '𝗯', 'c': '𝗰', 'd': '𝗱', 'e': '𝗲', 'f': '𝗳', 'g': '𝗴', 'h': '𝗵',
+                'i': '𝗶', 'j': '𝗷', 'k': '𝗸', 'l': '𝗹', 'm': '𝗺', 'n': '𝗻', 'o': '𝗼', 'p': '𝗽',
+                'q': '𝗾', 'r': '𝗿', 's': '𝘀', 't': '𝘁', 'u': '𝘂', 'v': '𝘃', 'w': '𝘄', 'x': '𝘅',
+                'y': '𝘆', 'z': '𝘇',
+                'A': '𝗔', 'B': '𝗕', 'C': '𝗖', 'D': '𝗗', 'E': '𝗘', 'F': '𝗙', 'G': '𝗚', 'H': '𝗛',
+                'I': '𝗜', 'J': '𝗝', 'K': '𝗞', 'L': '𝗟', 'M': '𝗠', 'N': '𝗡', 'O': '𝗢', 'P': '𝗣',
+                'Q': '𝗤', 'R': '𝗥', 'S': '𝗦', 'T': '𝗧', 'U': '𝗨', 'V': '𝗩', 'W': '𝗪', 'X': '𝗫',
+                'Y': '𝗬', 'Z': '𝗭',
+                '0': '𝟎', '1': '𝟏', '2': '𝟐', '3': '𝟑', '4': '𝟒', '5': '𝟓', '6': '𝟖', '7': '𝟕',
+                '8': '𝟘', '9': '𝟙'
+            };
+
+            return inputText.split('').map(char => boldSansChars[char] || char).join('');
+        }
+
+        // Event listener for input changes
+        document.getElementById("normalInput").addEventListener("input", function() {
+            const inputText = this.value;
+
+            // Update output for each style
+            document.getElementById("boldOutput").value = convertToBold(inputText);
+            document.getElementById("italicOutput").value = convertToItalic(inputText);
+            document.getElementById("boldItalicOutput").value = convertToBoldItalic(inputText);
+            document.getElementById("boldScriptOutput").value = convertToBoldScript(inputText);
+            document.getElementById("italicScriptOutput").value = convertToItalicScript(inputText);
+            document.getElementById("boldFrakturOutput").value = convertToBoldFraktur(inputText);
+            document.getElementById("italicFrakturOutput").value = convertToItalicFraktur(inputText);
+            document.getElementById("boldSansOutput").value = convertToBoldSans(inputText);
+        });
+    </script>
+
+</body>
+</html>
