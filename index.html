@@ -3,256 +3,363 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Style Converter</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TypoTransform</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style>
+        /* General Styles */
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f4f7fa;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            width: 90%;
-            max-width: 900px;
-            box-sizing: border-box;
-        }
-
-        h1 {
-            text-align: center;
+            background-color: #f7f9fc;
             color: #333;
-            font-size: 32px;
-            margin-bottom: 20px;
+            line-height: 1.6;
         }
 
-        label {
-            font-size: 16px;
+        h1, h2, h3, h4 {
+            margin: 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #5e72e4;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 48px;
             font-weight: 600;
-            color: #555;
+            margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
-        textarea {
-            width: 100%;
-            padding: 12px;
-            margin-top: 8px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            background-color: #fafafa;
-            font-size: 16px;
-            resize: vertical;
+        .hero p {
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .cta-btn {
+            background-color: #ffffff;
+            color: #5e72e4;
+            padding: 12px 30px;
+            font-size: 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
             transition: all 0.3s ease;
         }
 
-        textarea:focus {
-            border-color: #5e72e4;
-            background-color: #fff;
-            outline: none;
+        .hero .cta-btn:hover {
+            background-color: #4c61c7;
+            color: white;
         }
 
-        .text-area-wrapper {
-            margin-bottom: 20px;
+        .hero .image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 700px;
+            opacity: 0.2;
+            z-index: -1;
         }
 
-        .text-area-wrapper:last-child {
-            margin-bottom: 0;
+        /* Text Conversion Section */
+        .converter {
+            padding: 40px 20px;
+            background-color: #ffffff;
+            margin-top: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .text-areas {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        .text-areas textarea {
-            font-family: "Courier New", monospace;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #5e72e4;
-            color: #fff;
-            padding: 12px 25px;
-            border-radius: 5px;
-            font-size: 16px;
+        .converter h2 {
+            font-size: 32px;
             font-weight: 600;
-            cursor: pointer;
+            margin-bottom: 20px;
             text-align: center;
-            text-decoration: none;
-            margin-top: 15px;
-            transition: background-color 0.3s ease;
         }
 
-        .btn:hover {
+        .converter textarea {
+            width: 100%;
+            height: 100px;
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .converter .output {
+            background-color: #f4f7fa;
+            border: 1px solid #ddd;
+        }
+
+        .converter button {
+            display: block;
+            width: 100%;
+            background-color: #5e72e4;
+            color: white;
+            padding: 12px;
+            font-size: 18px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .converter button:hover {
             background-color: #4c61c7;
         }
 
-        /* Responsive design */
-        @media (min-width: 768px) {
-            .text-areas {
-                grid-template-columns: 1fr 1fr;
+        /* Features Section */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: #ffffff;
+            padding: 60px 20px;
+        }
+
+        .features .feature {
+            text-align: center;
+            max-width: 250px;
+            padding: 20px;
+        }
+
+        .features .feature i {
+            font-size: 40px;
+            color: #5e72e4;
+            margin-bottom: 15px;
+        }
+
+        .features .feature h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .features .feature p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 60px 20px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .testimonials .testimonial {
+            display: inline-block;
+            max-width: 500px;
+            margin: 0 15px;
+            font-size: 16px;
+            color: #666;
+            border-left: 4px solid #5e72e4;
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+
+        .testimonials .testimonial span {
+            font-weight: 600;
+            color: #333;
+            display: block;
+            margin-top: 10px;
+        }
+
+
+        /* Footer Section */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+        }
+
+        .footer a{
+            color: greenyellow;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column;
+            }
+
+            .features .feature {
+                margin-bottom: 40px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Boost Engagement with Stunning Font Transformations</h1>
 
-        <div class="text-area-wrapper">
-            <label for="normalInput">Enter Text:</label>
-            <textarea id="normalInput" rows="4" placeholder="Type your text here..."></textarea>
-        </div>
+<!-- Hero Section -->
+<section class="hero">
+    <h1>Transform Your Text in Seconds</h1>
+    <p>Unlock the power of bold, italic, fraktur, sans-serif, and more! Enhance your content with stunning text styles.</p>
+    <a href="#converter" class="cta-btn">Get Started</a>
+    <img src="https://via.placeholder.com/700x500" alt="Text Styling Illustration" class="image">
+</section>
 
-        <div class="text-areas">
-            <div class="text-area-wrapper">
-                <label for="boldOutput">Bold Output:</label>
-                <textarea id="boldOutput" rows="4" readonly></textarea>
-            </div>
-            <div class="text-area-wrapper">
-                <label for="italicOutput">Italic Output:</label>
-                <textarea id="italicOutput" rows="4" readonly></textarea>
-            </div>
-            <div class="text-area-wrapper">
-                <label for="boldItalicOutput">Bold Italic Output:</label>
-                <textarea id="boldItalicOutput" rows="4" readonly></textarea>
-            </div>
-            <div class="text-area-wrapper">
-                <label for="boldFrakturOutput">Bold Fraktur Output:</label>
-                <textarea id="boldFrakturOutput" rows="4" readonly></textarea>
-            </div>
-            <div class="text-area-wrapper">
-                <label for="italicFrakturOutput">Italic Fraktur Output:</label>
-                <textarea id="italicFrakturOutput" rows="4" readonly></textarea>
-            </div>
-            <div class="text-area-wrapper">
-                <label for="boldSansOutput">Bold Sans-Serif Output:</label>
-                <textarea id="boldSansOutput" rows="4" readonly></textarea>
-            </div>
-        </div>
+<!-- Text Conversion Section -->
+<section class="converter" id="converter">
+    <h2>Try Text Style Conversion</h2>
+    <textarea id="normalInput" placeholder="Enter your text here..."></textarea>
+    <button onclick="convertText()">Convert Text</button>
 
-        <a href="#" class="btn" id="clearBtn">Clear All</a>
+    <h3>Converted Text:</h3>
+    <div>
+        <textarea id="boldOutput" class="output" readonly placeholder="Bold Text"></textarea>
+        <textarea id="italicOutput" class="output" readonly placeholder="Italic Text"></textarea>
+        <textarea id="boldItalicOutput" class="output" readonly placeholder="Bold & Italic Text"></textarea>
+        <textarea id="boldFrakturOutput" class="output" readonly placeholder="Bold Fraktur"></textarea>
+        <textarea id="italicFrakturOutput" class="output" readonly placeholder="Italic Fraktur"></textarea>
+        <textarea id="boldSansOutput" class="output" readonly placeholder="Bold Sans"></textarea>
     </div>
+</section>
 
-    <script>
-        // Conversion functions
-        function convertToBold(inputText) {
-            const boldChars = {
-                'a': '𝗮', 'b': '𝗯', 'c': '𝗰', 'd': '𝗱', 'e': '𝗲', 'f': '𝗳', 'g': '𝗴', 'h': '𝗵',
-                'i': '𝗶', 'j': '𝗷', 'k': '𝗸', 'l': '𝗹', 'm': '𝗺', 'n': '𝗻', 'o': '𝗼', 'p': '𝗽',
-                'q': '𝗾', 'r': '𝗿', 's': '𝘀', 't': '𝘁', 'u': '𝘂', 'v': '𝘃', 'w': '𝘄', 'x': '𝘅',
-                'y': '𝘆', 'z': '𝘇',
-                'A': '𝗔', 'B': '𝗕', 'C': '𝗖', 'D': '𝗗', 'E': '𝗘', 'F': '𝗙', 'G': '𝗚', 'H': '𝗛',
-                'I': '𝗜', 'J': '𝗝', 'K': '𝗞', 'L': '𝗟', 'M': '𝗠', 'N': '𝗡', 'O': '𝗢', 'P': '𝗣',
-                'Q': '𝗤', 'R': '𝗥', 'S': '𝗦', 'T': '𝗧', 'U': '𝗨', 'V': '𝗩', 'W': '𝗪', 'X': '𝗫',
-                'Y': '𝗬', 'Z': '𝗭',
-                '0': '𝟎', '1': '𝟏', '2': '𝟐', '3': '𝟑', '4': '𝟒', '5': '𝟓', '6': '𝟖', '7': '𝟕',
-                '8': '𝟘', '9': '𝟙'
-            };
-            return inputText.split('').map(char => boldChars[char] || char).join('');
-        }
+<!-- Features Section -->
+<section class="features">
+    <div class="feature">
+        <i class="fas fa-font"></i>
+        <h3>Easy to Use</h3>
+        <p>Convert text to different styles in just a few clicks, no design skills required!</p>
+    </div>
+    <div class="feature">
+        <i class="fas fa-palette"></i>
+        <h3>Multiple Styles</h3>
+        <p>Choose from bold, italic, fraktur, sans-serif, and more to match your style.</p>
+    </div>
+    <div class="feature">
+        <i class="fas fa-clock"></i>
+        <h3>Instant Results</h3>
+        <p>Get your desired text style in seconds—perfect for quick content creation.</p>
+    </div>
+</section>
 
-        function convertToItalic(inputText) {
-            const italicChars = {
-                'a': '𝑎', 'b': '𝑏', 'c': '𝑐', 'd': '𝑑', 'e': '𝑒', 'f': '𝑓', 'g': '𝑔', 'h': 'ℎ',
-                'i': '𝑖', 'j': '𝑗', 'k': '𝑘', 'l': '𝑙', 'm': '𝑚', 'n': '𝑛', 'o': '𝑜', 'p': '𝑝',
-                'q': '𝑞', 'r': '𝑟', 's': '𝑠', 't': '𝑡', 'u': '𝑢', 'v': '𝑣', 'w': '𝑤', 'x': '𝑥',
-                'y': '𝑦', 'z': '𝑧',
-                'A': '𝐴', 'B': '𝐵', 'C': '𝐶', 'D': '𝐷', 'E': '𝐸', 'F': '𝐹', 'G': '𝐺', 'H': '𝐻',
-                'I': '𝐼', 'J': '𝒥', 'K': '𝐾', 'L': '𝐿', 'M': '𝑀', 'N': '𝑁', 'O': '𝑂', 'P': '𝑃',
-                'Q': '𝑄', 'R': '𝑅', 'S': '𝑆', 'T': '𝑇', 'U': '𝑈', 'V': '𝑉', 'W': '𝑊', 'X': '𝑋',
-                'Y': '𝑌', 'Z': '𝑍'
-            };
-            return inputText.split('').map(char => italicChars[char] || char).join('');
-        }
+<!-- Testimonials Section -->
+<section class="testimonials">
+    <h2>What Our Users Say</h2>
+    <div class="testimonial">
+        <p>"This tool has made my content creation process so much easier! I can add the perfect text styles in no time."</p>
+        <span>- Anonymous</span>
+    </div>
+    <div class="testimonial">
+        <p>"I love how easy it is to use and how quickly I can transform my text for Linkedin posts"</p>
+        <span>- Anonymous</span>
+    </div>
+</section>
 
-        function convertToBoldItalic(inputText) {
-            const boldItalicChars = {
-                'a': '𝗮', 'b': '𝗯', 'c': '𝗰', 'd': '𝗱', 'e': '𝗲', 'f': '𝗳', 'g': '𝗴', 'h': '𝗵',
-                'i': '𝗶', 'j': '𝗷', 'k': '𝗸', 'l': '𝗹', 'm': '𝗺', 'n': '𝗻', 'o': '𝗼', 'p': '𝗽',
-                'q': '𝗾', 'r': '𝗿', 's': '𝘀', 't': '𝘁', 'u': '𝘂', 'v': '𝘃', 'w': '𝘄', 'x': '𝘅',
-                'y': '𝘆', 'z': '𝘇',
-                'A': '𝗔', 'B': '𝗕', 'C': '𝗖', 'D': '𝗗', 'E': '𝗘', 'F': '𝗙', 'G': '𝗚', 'H': '𝗛',
-                'I': '𝗜', 'J': '𝗝', 'K': '𝗞', 'L': '𝗟', 'M': '𝗠', 'N': '𝗡', 'O': '𝗢', 'P': '𝗣',
-                'Q': '𝗤', 'R': '𝗥', 'S': '𝗦', 'T': '𝗧', 'U': '𝗨', 'V': '𝗩', 'W': '𝗪', 'X': '𝗫',
-                'Y': '𝗬', 'Z': '𝗭',
-                '0': '𝟎', '1': '𝟏', '2': '𝟐', '3': '𝟑', '4': '𝟒', '5': '𝟓', '6': '𝟖', '7': '𝟕',
-                '8': '𝟘', '9': '𝟙'
-            };
-            return inputText.split('').map(char => boldItalicChars[char] || char).join('');
-        }
+<!-- Footer Section -->
+<footer class="footer">
+    <p>Built by <a href="https://www.linkedin.com/in/bilalpirzada/">BilalPirzada</a></p>
+    <p>&copy; 2025 Text Style Converter | All Rights Reserved</p>
+</footer>
 
-        function convertToBoldFraktur(inputText) {
-            const boldFrakturChars = {
-                'a': '𝔞', 'b': '𝔟', 'c': '𝔠', 'd': '𝔡', 'e': '𝔢', 'f': '𝔣', 'g': '𝔤', 'h': '𝔥',
-                'i': '𝔦', 'j': '𝔧', 'k': '𝔨', 'l': '𝔩', 'm': '𝔪', 'n': '𝔫', 'o': '𝔬', 'p': '𝔭',
-                'q': '𝔮', 'r': '𝔯', 's': '𝔰', 't': '𝔱', 'u': '𝔲', 'v': '𝔳', 'w': '𝔴', 'x': '𝔵',
-                'y': '𝔶', 'z': '𝔷',
-                'A': '𝔄', 'B': '𝔅', 'C': 'ℭ', 'D': '𝔇', 'E': '𝔈', 'F': '𝔉', 'G': '𝗚', 'H': '𝗛',
-                'I': '𝔈', 'J': '𝔍', 'K': '𝔎', 'L': '𝔏', 'M': '𝔐', 'N': '𝔑', 'O': '𝔒', 'P': '𝔓',
-                'Q': '𝔔', 'R': '𝔖', 'S': '𝔖', 'T': '𝔛', 'U': '𝔘', 'V': '𝔙', 'W': '𝔚'
-            }
-            return inputText.split('').map(char => boldFrakturChars[char] || char).join('');
-        }
+<script>
+    // Conversion Functions
+    function convertToBold(inputText) {
+        const boldChars = {
+            'a': '𝗮', 'b': '𝗯', 'c': '𝗰', 'd': '𝗱', 'e': '𝗲', 'f': '𝗳', 'g': '𝗴', 'h': '𝗵',
+            'i': '𝗶', 'j': '𝗷', 'k': '𝗸', 'l': '𝗹', 'm': '𝗺', 'n': '𝗻', 'o': '𝗼', 'p': '𝗽',
+            'q': '𝗾', 'r': '𝗿', 's': '𝘀', 't': '𝘁', 'u': '𝘂', 'v': '𝘃', 'w': '𝘄', 'x': '𝘅',
+            'y': '𝘆', 'z': '𝘇',
+            'A': '𝗔', 'B': '𝗕', 'C': '𝗖', 'D': '𝗗', 'E': '𝗘', 'F': '𝗙', 'G': '𝗚', 'H': '𝗛',
+            'I': '𝗜', 'J': '𝗝', 'K': '𝗞', 'L': '𝗟', 'M': '𝗠', 'N': '𝗡', 'O': '𝗢', 'P': '𝗣',
+            'Q': '𝗤', 'R': '𝗥', 'S': '𝗦', 'T': '𝗧', 'U': '𝗨', 'V': '𝗩', 'W': '𝗪', 'X': '𝗫',
+            'Y': '𝗬', 'Z': '𝗭'
+        };
+        return inputText.split('').map(char => boldChars[char] || char).join('');
+    }
 
-        function convertToItalicFraktur(inputText) {
-            const italicFrakturChars = {
-                'a': '𝖆', 'b': '𝖇', 'c': '𝖈', 'd': '𝖉', 'e': '𝖊', 'f': '𝖋', 'g': '𝖌', 'h': '𝖍',
-                'i': '𝖎', 'j': '𝖏', 'k': '𝖐', 'l': '𝖑', 'm': '𝖒', 'n': '𝖓', 'o': '𝖔', 'p': '𝖕',
-                'q': '𝖖', 'r': '𝖗', 's': '𝖘', 't': '𝖙', 'u': '𝖚', 'v': '𝖛', 'w': '𝖜', 'x': '𝖝',
-                'y': '𝖞', 'z': '𝖟',
-                'A': '𝖠', 'B': '𝖡', 'C': '𝖢', 'D': '𝖣', 'E': '𝖤', 'F': '𝖥', 'G': '𝖦', 'H': '𝖧',
-                'I': '𝖨', 'J': '𝖩', 'K': '𝖪', 'L': '𝖫', 'M': '𝖬', 'N': '𝖭', 'O': '𝖮', 'P': '𝖯',
-                'Q': '𝖰', 'R': '𝖱', 'S': '𝖲', 'T': '𝖳', 'U': '𝖴', 'V': '𝖵', 'W': '𝖶', 'X': '𝖷',
-                'Y': '𝖸', 'Z': '𝖹'
-            };
-            return inputText.split('').map(char => italicFrakturChars[char] || char).join('');
-        }
+    function convertToItalic(inputText) {
+        const italicChars = {
+            'a': '𝑎', 'b': '𝑏', 'c': '𝑐', 'd': '𝑑', 'e': '𝑒', 'f': '𝑓', 'g': '𝑔', 'h': 'ℎ',
+            'i': '𝑖', 'j': '𝑗', 'k': '𝑘', 'l': '𝑙', 'm': '𝑚', 'n': '𝑛', 'o': '𝑜', 'p': '𝑝',
+            'q': '𝑞', 'r': '𝑟', 's': '𝑠', 't': '𝑡', 'u': '𝑢', 'v': '𝑣', 'w': '𝑤', 'x': '𝑥',
+            'y': '𝑦', 'z': '𝑧',
+            'A': '𝑎', 'B': '𝑏', 'C': '𝑐', 'D': '𝑑', 'E': '𝑒', 'F': '𝑓', 'G': '𝑔', 'H': '𝑎',
+            'I': '𝑖', 'J': '𝑗', 'K': '𝑘', 'L': '𝑙', 'M': '𝑚', 'N': '𝑛', 'O': '𝑂', 'P': '𝑝',
+            'Q': '𝑞', 'R': '𝑟', 'S': '𝑠', 'T': '𝑡', 'U': '𝑢', 'V': '𝑣', 'W': '𝑤', 'X': '𝑥',
+            'Y': '𝑦', 'Z': '𝑧'
+        };
+        return inputText.split('').map(char => italicChars[char] || char).join('');
+    }
 
-        function convertToBoldSans(inputText) {
-            const boldSansChars = {
-                'a': '𝗮', 'b': '𝗯', 'c': '𝗰', 'd': '𝗱', 'e': '𝗲', 'f': '𝗳', 'g': '𝗴', 'h': '𝗵',
-                'i': '𝗶', 'j': '𝗷', 'k': '𝗸', 'l': '𝗹', 'm': '𝗺', 'n': '𝗻', 'o': '𝗼', 'p': '𝗽',
-                'q': '𝗾', 'r': '𝗿', 's': '𝘀', 't': '𝘁', 'u': '𝘂', 'v': '𝘃', 'w': '𝘄', 'x': '𝘅',
-                'y': '𝘆', 'z': '𝘇',
-                'A': '𝗔', 'B': '𝗕', 'C': '𝗖', 'D': '𝗗', 'E': '𝗘', 'F': '𝗙', 'G': '𝗚', 'H': '𝗛',
-                'I': '𝗜', 'J': '𝗝', 'K': '𝗞', 'L': '𝗟', 'M': '𝗠', 'N': '𝗡', 'O': '𝗢', 'P': '𝗣',
-                'Q': '𝗤', 'R': '𝗥', 'S': '𝗦', 'T': '𝗧', 'U': '𝗨', 'V': '𝗩', 'W': '𝗪', 'X': '𝗫',
-                'Y': '𝗬', 'Z': '𝗭'
-            }
-            return inputText.split('').map(char => boldSansChars[char] || char).join('');
-        }
+    function convertToBoldItalic(inputText) {
+        return convertToBold(convertToItalic(inputText));
+    }
 
-        // Event listener
-        document.getElementById('normalInput').addEventListener('input', function () {
-            const inputText = this.value;
-            
-            document.getElementById('boldOutput').value = convertToBold(inputText);
-            document.getElementById('italicOutput').value = convertToItalic(inputText);
-            document.getElementById('boldItalicOutput').value = convertToBoldItalic(inputText);
-            document.getElementById('boldFrakturOutput').value = convertToBoldFraktur(inputText);
-            document.getElementById('italicFrakturOutput').value = convertToItalicFraktur(inputText);
-            document.getElementById('boldSansOutput').value = convertToBoldSans(inputText);
-        });
+    function convertToBoldFraktur(inputText) {
+        const boldFrakturChars = {
+            'a': '𝖆', 'b': '𝖇', 'c': '𝖈', 'd': '𝖉', 'e': '𝖊', 'f': '𝖋', 'g': '𝖌', 'h': '𝖍',
+            'i': '𝖎', 'j': '𝖏', 'k': '𝖐', 'l': '𝖑', 'm': '𝖒', 'n': '𝖓', 'o': '𝖔', 'p': '𝖕',
+            'q': '𝖖', 'r': '𝖗', 's': '𝖘', 't': '𝖙', 'u': '𝖚', 'v': '𝖛', 'w': '𝖜', 'x': '𝖝',
+            'y': '𝖞', 'z': '𝖟',
+            'A': '𝖠', 'B': '𝖡', 'C': '𝖢', 'D': '𝖣', 'E': '𝖤', 'F': '𝖥', 'G': '𝖦', 'H': '𝖧',
+            'I': '𝖨', 'J': '𝖩', 'K': '𝖪', 'L': '𝖬', 'M': '𝖬', 'N': '𝖭', 'O': '𝖮', 'P': '𝖯',
+            'Q': '𝖰', 'R': '𝖱', 'S': '𝖲', 'T': '𝖳', 'U': '𝖴', 'V': '𝖵', 'W': '𝖶', 'X': '𝖷',
+            'Y': '𝖸', 'Z': '𝖹'
+        };
+        return inputText.split('').map(char => boldFrakturChars[char] || char).join('');
+    }
 
-        // Clear button functionality
-        document.getElementById('clearBtn').addEventListener('click', function () {
-            document.getElementById('normalInput').value = '';
-            document.getElementById('boldOutput').value = '';
-            document.getElementById('italicOutput').value = '';
-            document.getElementById('boldItalicOutput').value = '';
-            document.getElementById('boldFrakturOutput').value = '';
-            document.getElementById('italicFrakturOutput').value = '';
-            document.getElementById('boldSansOutput').value = '';
-        });
-    </script>
+    function convertToItalicFraktur(inputText) {
+        return convertToItalic(convertToBoldFraktur(inputText));
+    }
+
+    function convertToBoldSans(inputText) {
+        const boldSansChars = {
+            'a': '𝗮', 'b': '𝗯', 'c': '𝗰', 'd': '𝗱', 'e': '𝗲', 'f': '𝗳', 'g': '𝗴', 'h': '𝗵',
+            'i': '𝗶', 'j': '𝗷', 'k': '𝗸', 'l': '𝗹', 'm': '𝗺', 'n': '𝗻', 'o': '𝗼', 'p': '𝗽',
+            'q': '𝗾', 'r': '𝗿', 's': '𝘀', 't': '𝘁', 'u': '𝘂', 'v': '𝘃', 'w': '𝘄', 'x': '𝘅',
+            'y': '𝘆', 'z': '𝘇',
+            'A': '𝗔', 'B': '𝗕', 'C': '𝗖', 'D': '𝗗', 'E': '𝗘', 'F': '𝗙', 'G': '𝗚', 'H': '𝗛',
+            'I': '𝗜', 'J': '𝗝', 'K': '𝗞', 'L': '𝗟', 'M': '𝗠', 'N': '𝗡', 'O': '𝗢', 'P': '𝗣',
+            'Q': '𝗤', 'R': '𝗥', 'S': '𝗦', 'T': '𝗧', 'U': '𝗨', 'V': '𝗩', 'W': '𝗪', 'X': '𝗫',
+            'Y': '𝗬', 'Z': '𝗭'
+        };
+        return inputText.split('').map(char => boldSansChars[char] || char).join('');
+    }
+
+    // Convert Text Function
+    function convertText() {
+        let inputText = document.getElementById('normalInput').value;
+        document.getElementById('boldOutput').value = convertToBold(inputText);
+        document.getElementById('italicOutput').value = convertToItalic(inputText);
+        document.getElementById('boldItalicOutput').value = convertToBoldItalic(inputText);
+        document.getElementById('boldFrakturOutput').value = convertToBoldFraktur(inputText);
+        document.getElementById('italicFrakturOutput').value = convertToItalicFraktur(inputText);
+        document.getElementById('boldSansOutput').value = convertToBoldSans(inputText);
+    }
+</script>
+
 </body>
 </html>
