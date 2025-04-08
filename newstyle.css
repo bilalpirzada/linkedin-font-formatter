@@ -1,0 +1,256 @@
+/* General Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #6c9dd3, #f5a4a4);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.hero p {
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero .cta-btn {
+  background-color: #ffffff;
+  color: #6c9dd3;
+  padding: 15px 40px;
+  font-size: 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.hero .cta-btn:hover {
+  background-color: #f5a4a4;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero .image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 700px;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+/* Text Conversion Section */
+.converter {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  margin-top: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.converter h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #6c9dd3;
+}
+
+.converter textarea {
+  width: 100%;
+  height: 120px;
+  padding: 18px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  margin-bottom: 25px;
+  box-sizing: border-box;
+  font-family: 'Lora', serif;
+  transition: border 0.3s ease;
+}
+
+.converter textarea:focus {
+  border-color: #6c9dd3;
+  outline: none;
+}
+
+.converter .output {
+  background-color: #f0f4f7;
+  border: 1px solid #ddd;
+}
+
+.converter button {
+  display: block;
+  width: 100%;
+  background: linear-gradient(135deg, #6c9dd3, #f5a4a4);
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  margin-top: 25px;
+  transition: all 0.3s ease;
+}
+
+.converter button:hover {
+  background: linear-gradient(135deg, #f5a4a4, #6c9dd3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #ffffff;
+  padding: 60px 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.features .feature {
+  text-align: center;
+  max-width: 300px;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.features .feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.features .feature i {
+  font-size: 50px;
+  color: #6c9dd3;
+  margin-bottom: 20px;
+}
+
+.features .feature h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #6c9dd3;
+}
+
+.features .feature p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #6c9dd3;
+}
+
+.testimonials .testimonial {
+  display: inline-block;
+  max-width: 500px;
+  margin: 0 20px;
+  font-size: 16px;
+  color: #666;
+  border-left: 6px solid #6c9dd3;
+  padding-left: 20px;
+  line-height: 1.8;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.testimonials .testimonial span {
+  font-weight: 600;
+  color: #2c3e50;
+  display: block;
+  margin-top: 15px;
+}
+
+/* Footer Section */
+.footer {
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 16px;
+}
+
+.footer a {
+  color: #f5a4a4;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+      font-size: 40px;
+  }
+
+  .hero p {
+      font-size: 16px;
+  }
+
+  .cta-btn {
+      font-size: 16px;
+      padding: 12px 25px;
+  }
+
+  .features {
+      flex-direction: column;
+  }
+
+  .features .feature {
+      margin-bottom: 40px;
+  }
+
+  .converter textarea {
+      font-size: 16px;
+  }
+
+  .converter button {
+      font-size: 16px;
+      padding: 12px;
+  }
+}
